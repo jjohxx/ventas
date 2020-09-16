@@ -8,9 +8,12 @@ import java.awt.event.KeyEvent;
 
 public class AccionAgregarProducto extends AbstractAction {
 
-    public AccionAgregarProducto() {
+    private JTable tableDeRegistro;
+
+    public AccionAgregarProducto(JTable tableroDeRegistro) {
         super("Agregar");
         putValue(Action.MNEMONIC_KEY, KeyEvent.VK_A);
+        this.tableDeRegistro = tableroDeRegistro;
     }
 
     @Override
@@ -24,7 +27,7 @@ public class AccionAgregarProducto extends AbstractAction {
         form.setSize(400, 300);
         form.setModal(true);
         form.setLocationRelativeTo(null);
-        form.add(new FormularioAgregarProducto(form));
+        form.add(new FormularioAgregarProducto(form, tableDeRegistro));
         form.setVisible(true);
     }
 }

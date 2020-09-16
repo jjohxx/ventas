@@ -10,9 +10,11 @@ public class FormularioAgregarProducto extends JPanel {
 
     private JPanel inputs;
     private JDialog form;
+    private JTable tableroDeRegistro;
 
-    public FormularioAgregarProducto(JDialog form) {
+    public FormularioAgregarProducto(JDialog form, JTable tableDeRegistro) {
         this.form = form;
+        this.tableroDeRegistro = tableDeRegistro;
         inicializarComponent();
     }
 
@@ -33,7 +35,7 @@ public class FormularioAgregarProducto extends JPanel {
 
     private JPanel crearPanelBotones() {
         JPanel botones = new JPanel(new GridLayout(1, 2));
-        botones.add(CreadorComponentes.crearBotonConAccion(new AccionGuardarProducto(inputs)));
+        botones.add(CreadorComponentes.crearBotonConAccion(new AccionGuardarProducto(inputs, tableroDeRegistro)));
         botones.add(CreadorComponentes.crearBotonConAccion(new AccionCancelarProducto(form)));
         return botones;
     }

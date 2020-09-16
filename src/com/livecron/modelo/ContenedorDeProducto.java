@@ -1,6 +1,8 @@
 package com.livecron.modelo;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ContenedorDeProducto {
@@ -20,7 +22,9 @@ public class ContenedorDeProducto {
     }
 
     public void agregarProducto(Producto producto) {
-        productosPorCodigo.put(producto.getCodigo(), producto);
+        if (producto != null && producto.getCodigo() != 0) {
+            productosPorCodigo.put(producto.getCodigo(), producto);
+        }
     }
 
     public boolean existeProducto(long codigo) {
@@ -33,6 +37,14 @@ public class ContenedorDeProducto {
 
     public Producto buscarProductoPorCodigo(long codigo) {
         return productosPorCodigo.get(codigo);
+    }
+
+    public int obtenerTamanio() {
+        return productosPorCodigo.size();
+    }
+
+    public Producto getProductoPorIndice(int indice) {
+        return new ArrayList<>(productosPorCodigo.values()).get(indice);
     }
 
     @Override
