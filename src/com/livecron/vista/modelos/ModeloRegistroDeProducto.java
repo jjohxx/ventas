@@ -10,7 +10,6 @@ import java.util.Date;
 public class ModeloRegistroDeProducto extends AbstractTableModel {
 
     private ContenedorDeProducto contenedorDeProducto = ContenedorDeProducto.getInstancia();
-    private String[] cabezeras = {"Codigo", "Nombre del Producto", "Precio", "Fecha de Vencimiento"};
 
     @Override
     public int getRowCount() {
@@ -19,12 +18,12 @@ public class ModeloRegistroDeProducto extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-        return ConstantesVista.NUMERO_DE_COLUMNAS_TABLA;
+        return ConstantesVista.CABEZERAS_DE_TABLA.length;
     }
 
     @Override
     public String getColumnName(int column) {
-        return cabezeras[column];
+        return ConstantesVista.CABEZERAS_DE_TABLA[column];
     }
 
     @Override

@@ -17,7 +17,7 @@ public class VentanaPrincipal extends JFrame {
     private void iniciarComponentes() {
         JTabbedPane princialTabs = new JTabbedPane();
         princialTabs.add("Registro", new PanelRegistroDeProducto());
-        princialTabs.add("Busqueda y seleccion", new JPanel());
+        princialTabs.add("Busqueda y seleccion", new PanelBusquedaSeleccion());
         princialTabs.add("Almacen", new JPanel());
         princialTabs.setFont(ConstantesVista.FUENTE_POR_DEFECTO_NEGRITA);
         add(princialTabs);
